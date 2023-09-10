@@ -11,18 +11,6 @@ similarity_scores = pd.read_pickle("similarity_scores.pkl")
 
 app = Flask(__name__)
 
-
-# Function to retrieve book suggestions based on user input
-def get_suggestions(query):
-    # Replace this with your logic to fetch book suggestions
-    # For example, you can search for book titles or authors that match the query
-    suggestions = []
-    for title in books["Book-Title"]:
-        if query.lower() in title.lower():
-            suggestions.append(title)
-    return suggestions
-
-
 @app.route("/")
 def home():
     return render_template("index.html", book_name=popular_df["Book-Title"].to_list(),
