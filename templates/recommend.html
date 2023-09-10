@@ -31,7 +31,7 @@
                         <a class="nav-link active" aria-current="page" href="/recommend">Recommend</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Contact</a>
+                        <a class="nav-link active" aria-current="page" href="/books">All Books</a>
                     </li>
                 </ul>
             </div>
@@ -52,15 +52,15 @@
             </div>
 
             {% if data %}
-            {% for i in data %}
-            <div class="col-md-3" style="margin-top:50px">
-                <div class="card-body">
-                    <img src="{{i[2]}}">
-                    <p>{{i[0]}}</p>
-                    <h4>{{i[1]}}</h4>
-                </div>
-            </div>
-            {% endfor %}
+                {% for i in data %}
+                    <div class="col-md-3" style="margin-top:50px">
+                        <div class="card-body">
+                            <img src="{{ i[2] }}">
+                            <p>{{ i[0] }}</p>
+                            <h4>{{ i[1] }}</h4>
+                        </div>
+                    </div>
+                {% endfor %}
 
             {% endif %}
 
